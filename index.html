@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kei Japanese Cheese Toast — Premium Artisan Bakery</title>
+  <meta name="description"
+    content="Kei Japanese Cheese Toast offers premium handcrafted Japanese-style cheese toast, salt bread, croffles, and croissants. Made fresh daily with authentic Japanese techniques." />
+  <meta name="keywords" content="Kei, Japanese, Cheese Toast, Bakery, Salt Bread, Croffle, Croissant, Artisan" />
+  <meta name="author" content="Kei Japanese Cheese Toast" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kei Japanese Cheese Toast — Premium Artisan Bakery" />
+  <meta property="og:description"
+    content="Handcrafted Japanese-style cheese toast, salt bread, croffles, and more. Made fresh daily." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (emoji fallback) -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧀</text></svg>" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <!-- Logo -->
+      <a href="#hero" class="navbar__logo" id="nav-logo">
+        <div class="navbar__logo-icon">K</div>
+        <div class="navbar__logo-text">Kei <span>けい</span></div>
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="navbar__links" id="navbar-links">
+        <a href="#hero" class="navbar__link active" id="nav-home">Home</a>
+        <a href="#menu" class="navbar__link" id="nav-menu">Menu</a>
+        <a href="#products" class="navbar__link" id="nav-products">Products</a>
+        <a href="#stores" class="navbar__link" id="nav-stores">Our Stores</a>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="navbar__overlay" id="navbar-overlay"></div>
+  </nav>
+
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <section class="hero section-padding" id="hero">
+    <div class="hero__bg-accent"></div>
+    <div class="container hero__inner">
+
+      <!-- Content -->
+      <div class="hero__content">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          Freshly Baked Every Day
+        </div>
+        <h1 class="hero__title">
+          Japanese<br />
+          <span class="highlight">Cheese Toast</span><br />
+          Done Right.
+        </h1>
+        <p class="hero__description">
+          Handcrafted with passion using authentic Japanese techniques and premium ingredients.
+          Every bite is a golden, cheesy experience you'll never forget.
+        </p>
+        <div class="hero__actions">
+          <a href="#products" class="btn btn--primary" id="hero-cta-explore">
+            Explore Our Menu
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+          <a href="#stores" class="btn btn--outline" id="hero-cta-stores">
+            Find a Store
+          </a>
+        </div>
+      </div>
+
+      <!-- Image -->
+      <div class="hero__image-wrapper">
+        <img class="hero__image" src="assets/images/hero-cheese-toast.png"
+          alt="Delicious Japanese cheese toast with melting cheese on a dark slate plate" loading="eager" />
+        <div class="hero__image-badge">
+          <div class="hero__image-badge-icon">⭐</div>
+          <div class="hero__image-badge-text">
+            #1 Best Seller
+            <span>Japanese Cheese Toast</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       MENU SECTION
+       ========================================== -->
+  <section class="menu section-padding" id="menu">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header reveal">
+        <span class="section-label">Our Menu</span>
+        <h2 class="section-title">Crafted with Love & Tradition</h2>
+        <p class="section-subtitle">
+          From classic Japanese cheese toast to crispy croffles and buttery croissants —
+          every item is made fresh daily with premium ingredients.
+        </p>
+      </div>
+
+      <!-- Menu Images Gallery -->
+      <div class="menu__gallery reveal">
+        <div class="menu__gallery-item" id="menu-image-1">
+          <img src="assets/images/menu-1.png" alt="Kei Japanese Cheese Toast — Full Menu" loading="lazy" />
+        </div>
+        <div class="menu__gallery-item" id="menu-image-2">
+          <img src="assets/images/menu-2.png" alt="Kei Japanese Cheese Toast — Croissant Menu" loading="lazy" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       PRODUCTS SECTION
+       ========================================== -->
+  <section class="products section-padding" id="products">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header reveal">
+        <span class="section-label">Our Products</span>
+        <h2 class="section-title">Taste the Difference</h2>
+        <p class="section-subtitle">
+          Explore our full range of artisan bakes — from cheesy indulgences to buttery pastries.
+        </p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="products__filters reveal">
+        <button class="filter-btn active" data-filter="all" id="filter-all">All</button>
+        <button class="filter-btn" data-filter="cheese-toast" id="filter-cheese-toast">Cheese Toast</button>
+        <button class="filter-btn" data-filter="salt-bread" id="filter-salt-bread">Salt Bread</button>
+        <button class="filter-btn" data-filter="croffle" id="filter-croffle">Croffle</button>
+        <button class="filter-btn" data-filter="ice-cream-toast" id="filter-ice-cream-toast">Ice Cream Toast</button>
+        <button class="filter-btn" data-filter="croissant" id="filter-croissant">Croissant</button>
+        <button class="filter-btn" data-filter="cheese-cake" id="filter-cheese-cake">Cheese Cake</button>
+      </div>
+
+      <!-- Product Grid — switches to horizontal scroll on "All" -->
+      <div class="products__grid" id="products-grid">
+
+        <!-- ── Cheese Toast ── -->
+        <div class="product-card product-card--customizer reveal reveal-delay-1" data-category="cheese-toast"
+          id="product-custom-cheese-toast">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" id="custom-toast-img" src="assets/images/product-cheese-toast.png"
+              alt="Customizable Japanese Cheese Toast" loading="lazy" />
+            <span class="product-card__category">Cheese Toast</span>
+            <div class="product-card__badge-custom">Customizable</div>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Kei Cheese Toast</h3>
+            <p class="product-card__desc">Customize your Japanese Cheese Toast! Choose your bread flavor and
+              creamy vla filling below.</p>
+
+            <!-- Toast Taste Selector -->
+            <div class="customizer-group">
+              <span class="customizer-label">Choose Toast Bread:</span>
+              <div class="customizer-options" id="toast-taste-options">
+                <button class="customizer-btn active" data-type="toast" data-value="Milk" style="--btn-color: #FFF9E6;"
+                  title="Milk">Milk</button>
+                <button class="customizer-btn" data-type="toast" data-value="Chocolate" style="--btn-color: #5C3A21;"
+                  title="Chocolate">Choc</button>
+                <button class="customizer-btn" data-type="toast" data-value="Strawberry" style="--btn-color: #FFC0CB;"
+                  title="Strawberry">Straw</button>
+                <button class="customizer-btn" data-type="toast" data-value="Matcha" style="--btn-color: #A9DFBF;"
+                  title="Matcha">Matcha</button>
+                <button class="customizer-btn" data-type="toast" data-value="Taro" style="--btn-color: #D7BDE2;"
+                  title="Taro">Taro</button>
+              </div>
+            </div>
+
+            <!-- Vla Flavor Selector -->
+            <div class="customizer-group">
+              <span class="customizer-label">Choose Favorite Vla:</span>
+              <div class="customizer-options" id="vla-flavor-options">
+                <button class="customizer-btn active" data-type="vla" data-value="Milk Cheese"
+                  title="Milk (Cheese)">Milk</button>
+                <button class="customizer-btn" data-type="vla" data-value="Oreo" title="Oreo">Oreo</button>
+                <button class="customizer-btn" data-type="vla" data-value="Chocolate" title="Chocolate">Choc</button>
+                <button class="customizer-btn" data-type="vla" data-value="Strawberry" title="Strawberry">Straw</button>
+                <button class="customizer-btn" data-type="vla" data-value="Salty Cheese"
+                  title="Salty Cheese (Not Sweet)">Salty</button>
+                <button class="customizer-btn" data-type="vla" data-value="Taro" title="Taro">Taro</button>
+              </div>
+            </div>
+
+            <!-- Combo Preview -->
+            <div class="customizer-preview">
+              <span class="preview-text">Combo: <strong id="combo-selection">Milk Toast + Milk Cheese
+                  Vla</strong></span>
+            </div>
+
+            <span class="product-card__price">Rp 30.000</span>
+          </div>
+        </div>
+
+        <!-- ── Salt Bread ── -->
+        <div class="product-card reveal reveal-delay-1" data-category="salt-bread" id="product-classic-salt-bread">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-salt-bread.png"
+              alt="Classic Salt Bread Cheese with Chocolate" loading="lazy" />
+            <span class="product-card__category">Salt Bread</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Salt Bread Cheese with Chocolate</h3>
+            <p class="product-card__desc">Soft buttery salt bread filled with creamy cheese and rich chocolate for a
+              sweet savory delight.</p>
+            <span class="product-card__price">Rp 18.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="salt-bread" id="product-cheese-salt-bread">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-salt-bread.png"
+              alt="Salt Bread Cheese with Salty Cheese" loading="lazy" />
+            <span class="product-card__category">Salt Bread</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Salt Bread Cheese with Salty Cheese</h3>
+            <p class="product-card__desc">Fluffy salt bread packed with creamy cheese and topped with savory salty
+              cheese flavor goodness.</p>
+            <span class="product-card__price">Rp 18.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="salt-bread" id="product-classic-salt-bread">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-salt-bread.png"
+              alt="Salt Bread Cheese with Milk" loading="lazy" />
+            <span class="product-card__category">Salt Bread</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Salt Bread Cheese with Milk</h3>
+            <p class="product-card__desc">Buttery salt bread combined with creamy cheese and smooth milk flavor for a
+              comforting sweet bite.</p>
+            <span class="product-card__price">Rp 18.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="salt-bread" id="product-cheese-salt-bread">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-salt-bread.png"
+              alt="Salt Bread Cheese with Cream Cheese" loading="lazy" />
+            <span class="product-card__category">Salt Bread</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Salt Bread Cheese with Cream Cheese</h3>
+            <p class="product-card__desc">Soft salt bread stuffed with creamy cheese and rich cream cheese for extra
+              smooth indulgence.</p>
+            <span class="product-card__price">Rp 22.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="salt-bread" id="product-classic-salt-bread">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-salt-bread.png"
+              alt="Salt Bread Cheese with Chocolate Cream" loading="lazy" />
+            <span class="product-card__category">Salt Bread</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Salt Bread Cheese with Chocolate Cream</h3>
+            <p class="product-card__desc">Freshly baked salt bread filled with creamy cheese and luscious chocolate
+              cream in every bite.</p>
+            <span class="product-card__price">Rp 20.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="salt-bread" id="product-cheese-salt-bread">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-salt-bread.png" alt="Salt Bread Original"
+              loading="lazy" />
+            <span class="product-card__category">Salt Bread</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Salt Bread Original</h3>
+            <p class="product-card__desc">Classic buttery salt bread with soft texture, light salty flavor, and
+              perfectly baked golden crust.</p>
+            <span class="product-card__price">Rp 15.000</span>
+          </div>
+        </div>
+
+        <!-- ── Croffle ── -->
+        <div class="product-card reveal reveal-delay-1" data-category="croffle" id="product-classic-croffle">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croffle.png" alt="Classic Croffle"
+              loading="lazy" />
+            <span class="product-card__category">Croffle</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Classic Croffle</h3>
+            <p class="product-card__desc">Crispy buttery croffle with flaky layers and golden texture, perfect for sweet
+              or savory cravings.</p>
+            <span class="product-card__price">Rp 20.000</span>
+          </div>
+        </div>
+
+        <!-- ── Ice Cream Toast ── -->
+        <div class="product-card reveal reveal-delay-1" data-category="ice-cream-toast"
+          id="product-vanilla-ice-cream-toast">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-ice-cream-toast.png"
+              alt="Chocolate Ice Cream Toast" loading="lazy" />
+            <span class="product-card__category">Ice Cream Toast</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Chocolate Ice Cream Toast</h3>
+            <p class="product-card__desc">Toasted bread topped with creamy chocolate ice cream for a rich and refreshing
+              sweet treat.
+            </p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="ice-cream-toast"
+          id="product-strawberry-ice-cream-toast">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-ice-cream-toast.png"
+              alt="Strawberry Ice Cream Toast" loading="lazy" />
+            <span class="product-card__category">Ice Cream Toast</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Strawberry Ice Cream Toast</h3>
+            <p class="product-card__desc">Crispy toast served with smooth strawberry ice cream and delightful fruity
+              sweetness in every bite.</p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="ice-cream-toast"
+          id="product-vanilla-ice-cream-toast">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-ice-cream-toast.png"
+              alt="Vanilla Ice Cream Toast" loading="lazy" />
+            <span class="product-card__category">Ice Cream Toast</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Vanilla Ice Cream Toast</h3>
+            <p class="product-card__desc">Warm toasted bread paired with creamy vanilla ice cream for a simple classic
+              dessert experience.
+            </p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="ice-cream-toast"
+          id="product-strawberry-ice-cream-toast">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-ice-cream-toast.png" alt="Oreo Ice Cream Toast"
+              loading="lazy" />
+            <span class="product-card__category">Ice Cream Toast</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Oreo Ice Cream Toast</h3>
+            <p class="product-card__desc">Crunchy toast topped with creamy ice cream and Oreo crumbs for a deliciously
+              chocolatey crunchy dessert.</p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="ice-cream-toast"
+          id="product-strawberry-ice-cream-toast">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-ice-cream-toast.png"
+              alt="Durian Ice Cream Toast" loading="lazy" />
+            <span class="product-card__category">Ice Cream Toast</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Durian Ice Cream Toast</h3>
+            <p class="product-card__desc">Toasted bread combined with creamy durian ice cream for a unique rich tropical
+              flavor sensation.</p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <!-- ── Croissant ── -->
+        <div class="product-card reveal reveal-delay-1" data-category="croissant" id="product-butter-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Croissant Milk Cheese"
+              loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Croissant Milk Cheese</h3>
+            <p class="product-card__desc">Buttery flaky croissant filled with creamy milk and cheese for a perfectly
+              soft sweet savory bite.</p>
+            <span class="product-card__price">Rp 28.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="croissant" id="product-almond-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Premium Chocolate Croissant"
+              loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Premium Chocolate Croissant</h3>
+            <p class="product-card__desc">Golden croissant layered with rich premium chocolate filling for an indulgent
+              and satisfying pastry experience.</p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="croissant" id="product-butter-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png"
+              alt="Chocolate Ice Cream Croissant" loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Chocolate Ice Cream Croissant</h3>
+            <p class="product-card__desc">Crispy croissant served with creamy chocolate ice cream for a refreshing sweet
+              and buttery combination.</p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="croissant" id="product-almond-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png"
+              alt="Strawberry Ice Cream Croissant" loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Strawberry Ice Cream Croissant</h3>
+            <p class="product-card__desc">Flaky croissant topped with smooth strawberry ice cream and fruity sweetness
+              in every delicious bite.</p>
+            <span class="product-card__price">Rp 25.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="croissant" id="product-butter-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Cheese Chocolate Croissant"
+              loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Cheese Chocolate Croissant</h3>
+            <p class="product-card__desc">Buttery croissant filled with creamy cheese and rich chocolate for a balanced
+              sweet savory flavor.</p>
+            <span class="product-card__price">Rp 28.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="croissant" id="product-butter-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Strawberry Croissant"
+              loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Strawberry Croissant</h3>
+            <p class="product-card__desc">Freshly baked croissant filled with sweet strawberry cream for a light fruity
+              and buttery pastry treat.</p>
+            <span class="product-card__price">Rp 28.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-2" data-category="croissant" id="product-almond-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Taro Croissant"
+              loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Taro Croissant</h3>
+            <p class="product-card__desc">Crispy buttery croissant packed with smooth taro filling for a sweet and
+              unique flavor experience.</p>
+            <span class="product-card__price">Rp 28.000</span>
+          </div>
+        </div>
+
+        <div class="product-card reveal reveal-delay-1" data-category="croissant" id="product-butter-croissant">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Double Cheese Croissant"
+              loading="lazy" />
+            <span class="product-card__category">Croissant</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Double Cheese Croissant</h3>
+            <p class="product-card__desc">Flaky croissant loaded with double cheese filling for extra creamy rich and
+              savory deliciousness.</p>
+            <span class="product-card__price">Rp 28.000</span>
+          </div>
+        </div>
+
+        <!-- ── Cheese Cake ── -->
+        <div class="product-card reveal reveal-delay-1" data-category="cheese-cake" id="product-burnt-cheese-cake">
+          <div class="product-card__image-wrapper">
+            <img class="product-card__image" src="assets/images/product-croissant.png" alt="Burnt Cheese Cake"
+              loading="lazy" />
+            <span class="product-card__category">Cheese Cake</span>
+          </div>
+          <div class="product-card__body">
+            <h3 class="product-card__name">Burnt Cheese Cake</h3>
+            <p class="product-card__desc">Creamy burnt cheesecake with caramelized top, rich texture, and perfectly
+              balanced sweet cheesy flavor.</p>
+            <span class="product-card__price">Rp 28.000</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       STORES SECTION
+       ========================================== -->
+  <section class="stores section-padding" id="stores">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header reveal">
+        <span class="section-label">Our Stores</span>
+        <h2 class="section-title">Visit Us Today</h2>
+        <p class="section-subtitle">
+          Find a Kei store near you and enjoy freshly baked Japanese cheese toast made with love.
+        </p>
+      </div>
+
+      <!-- Stores Grid -->
+      <div class="stores__grid">
+
+        <!-- Store 1 -->
+        <div class="store-card reveal reveal-delay-1" id="store-central" data-open="10:00" data-close="22:00">
+          <div class="store-card__image-wrapper">
+            <img class="store-card__image" src="assets/images/store-exterior.png" alt="Kei Pondok Indah Mall"
+              loading="lazy" />
+            <div class="store-card__status" data-status-target>
+              <span class="store-card__status-dot"></span>
+              <span class="store-card__status-text">Checking...</span>
+            </div>
+          </div>
+          <div class="store-card__body">
+            <h3 class="store-card__name">Kei - Pondok Indah Mall</h3>
+            <div class="store-card__info">
+              <div class="store-card__info-item">
+                <span class="store-card__info-icon">📍</span>
+                <span>Pondok Indah Mall 1</span>
+              </div>
+              <div class="store-card__info-item">
+                <span class="store-card__info-icon">🕐</span>
+                <span>Mon - Sun: 10.00 - 22.00</span>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/Umr7S4RYanR5oiLSA" target="_blank" rel="noopener noreferrer"
+              class="store-card__map-btn" id="store-central-map">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 2 -->
+        <div class="store-card reveal reveal-delay-2" id="store-south" data-open="10:00" data-close="22:00">
+          <div class="store-card__image-wrapper">
+            <img class="store-card__image" src="assets/images/store-exterior.png" alt="Kei Grand Galaxy Park"
+              loading="lazy" />
+            <div class="store-card__status" data-status-target>
+              <span class="store-card__status-dot"></span>
+              <span class="store-card__status-text">Checking...</span>
+            </div>
+          </div>
+          <div class="store-card__body">
+            <h3 class="store-card__name">Kei - Grand Galaxy Park</h3>
+            <div class="store-card__info">
+              <div class="store-card__info-item">
+                <span class="store-card__info-icon">📍</span>
+                <span>Grand Galaxy Park, Jl. Boulevar Raya Timur</span>
+              </div>
+              <div class="store-card__info-item">
+                <span class="store-card__info-icon">🕐</span>
+                <span>Mon - Sun: 10.00 - 22.00</span>
+              </div>
+            </div>
+            <a href="https://maps.app.goo.gl/R5bYNSTWRo8ercft8" target="_blank" rel="noopener noreferrer"
+              class="store-card__map-btn" id="store-south-map">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+
+        <!-- Store 3 -->
+        <div class="store-card reveal reveal-delay-3" id="store-west" data-open="09:00" data-close="21:00">
+          <div class="store-card__image-wrapper">
+            <img class="store-card__image" src="assets/images/store-exterior.png" alt="Kei Pademangan" loading="lazy" />
+            <div class="store-card__status" data-status-target>
+              <span class="store-card__status-dot"></span>
+              <span class="store-card__status-text">Checking...</span>
+            </div>
+          </div>
+          <div class="store-card__body">
+            <h3 class="store-card__name">Kei - Pademangan</h3>
+            <div class="store-card__info">
+              <div class="store-card__info-item">
+                <span class="store-card__info-icon">📍</span>
+                <span>Jl. Pademangan 3 Raya No. 8, Pademangan Timur</span>
+              </div>
+              <div class="store-card__info-item">
+                <span class="store-card__info-icon">🕐</span>
+                <span>Mon - Sun: 09.00 - 21.00</span>
+              </div>
+            </div>
+            <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="store-card__map-btn"
+              id="store-west-map">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Open in Maps
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__inner">
+
+        <!-- Brand Column -->
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="footer__logo-icon">K</div>
+            <div class="footer__logo-text">Kei けい</div>
+          </div>
+          <p class="footer__desc">
+            Premium Japanese-style cheese toast and artisan bakery.
+            Handcrafted with passion in every bite since 2024.
+          </p>
+          <div class="footer__social">
+            <a href="https://www.instagram.com/keijapanesecheesetoast" target="_blank" and rel="noopener noreferrer"
+              class="footer__social-link" aria-label="Instagram" id="social-instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+              </svg>
+            </a>
+            <a href="#" class="footer__social-link" aria-label="WhatsApp" id="social-whatsapp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer__column-title">Quick Links</h4>
+          <nav class="footer__links">
+            <a href="#hero" class="footer__link">Home</a>
+            <a href="#menu" class="footer__link">Our Menu</a>
+            <a href="#products" class="footer__link">Products</a>
+            <a href="#stores" class="footer__link">Stores</a>
+          </nav>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="footer__column-title">Categories</h4>
+          <nav class="footer__links">
+            <a href="#menu" class="footer__link">Cheese Toast</a>
+            <a href="#menu" class="footer__link">Salt Bread</a>
+            <a href="#menu" class="footer__link">Croffle</a>
+            <a href="#menu" class="footer__link">Croissant</a>
+          </nav>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="footer__column-title">Contact</h4>
+          <div class="footer__links">
+            <span class="footer__link">hello@keicheese.id</span>
+            <span class="footer__link">+62 21 1234 5678</span>
+            <span class="footer__link">Jakarta, Indonesia</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">&copy; 2026 Kei Japanese Cheese Toast. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__bottom-link">Privacy Policy</a>
+          <a href="#" class="footer__bottom-link">Terms of Service</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- Scripts -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
