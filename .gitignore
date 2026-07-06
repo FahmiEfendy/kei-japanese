@@ -1,10 +1,15 @@
-# Ignore everything in this directory by default
-*
+# ==============================
+# ENVIRONMENT
+# ==============================
+.env
 
-# Exceptions to keep tracked:
-!.gitignore
-!.env.example
-!docs/
-!Dockerfile
-!nginx.conf
-!.dockerignore
+# ==============================
+# OS & EDITOR
+# ==============================
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

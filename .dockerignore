@@ -1,0 +1,23 @@
+# Version control
+.git
+.github
+.gitignore
+
+# Docker
+docker-compose.yml
+Dockerfile
+
+# Documentation
+docs/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS & Editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
