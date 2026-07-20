@@ -17,6 +17,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **Scroll-to-top button** — Floating button visible after 400px scroll; smooth scroll, hover/active/focus-visible states, mobile-responsive sizing
 - **Lazy load blur-up effect** — CSS `filter: blur` placeholder + `is-loading` / `is-loaded` classes toggled on image load events
 - **CSS/JS minification in Docker** — Multi-stage build using `clean-css-cli` and `terser` before Nginx copy
+
+### Changed
 - **Image format** — All 31 product/store/hero images converted from PNG/JPG/JPEG to WebP (`cwebp -q 82`); original files deleted; `<img>` tags updated to `.webp` directly (no `<picture>` wrapper needed)
 - **Alt text** — All image `alt` attributes rewritten with descriptive, screen-reader-friendly copy
 - `loading="eager"` and `fetchpriority="high"` added to above-the-fold hero image
