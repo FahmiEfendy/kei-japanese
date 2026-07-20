@@ -1300,3 +1300,114 @@ button {
     text-align: center;
   }
 }
+
+/* ============================================
+   ACCESSIBILITY & FOCUS STYLES
+   ============================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  background: var(--clr-primary);
+  color: var(--clr-dark);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  font-weight: 700;
+  z-index: 10000;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--clr-dark);
+  outline-offset: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--clr-primary-dark);
+  outline-offset: 3px;
+}
+
+.filter-btn:focus-visible,
+.customizer-btn:focus-visible,
+.btn:focus-visible,
+.navbar__link:focus-visible,
+.footer__link:focus-visible,
+.store-card__map-btn:focus-visible {
+  outline: 3px solid var(--clr-primary-dark);
+  outline-offset: 2px;
+}
+
+/* Blur-up Lazy Loading Placeholder Effects */
+img[loading="lazy"] {
+  transition: filter 0.4s ease, opacity 0.4s ease;
+  background-color: var(--clr-bg-alt);
+}
+
+img.is-loading {
+  filter: blur(8px);
+  opacity: 0.6;
+}
+
+img.is-loaded {
+  filter: blur(0);
+  opacity: 1;
+}
+
+/* ---------- SCROLL TO TOP BUTTON ---------- */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--clr-primary);
+  color: var(--clr-dark);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
+  z-index: 999;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--clr-primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.scroll-top-btn:active {
+  transform: translateY(0);
+}
+
+.scroll-top-btn:focus-visible {
+  outline: 3px solid var(--clr-dark);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .scroll-top-btn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+

@@ -6,7 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
-## [1.0.0] — 2026-06-20
+## [1.0.0] — 2026-07-20
+
+### Added
+- **Content Security Policy** — Full CSP header in `nginx.conf`: `default-src 'self'`, `script-src 'self'`, `style-src` with Google Fonts whitelist, `font-src` for gstatic, `img-src 'self' data:`, `object-src 'none'`
+- **Accessibility** — Skip-to-content link, `<main id="main-content">` landmark, ARIA roles (`tablist`, `tab`, `navigation`, `group`), `aria-expanded`/`aria-controls`/`aria-hidden` on mobile nav, `aria-pressed` on customizer buttons, `aria-live="polite"` region for combo preview
+- **Keyboard navigation** — Arrow key, Home, End navigation for product filter tabs; Escape to close mobile menu and return focus to toggle
+- **Favicon** — Brand SVG icon (golden badge with "K" lettermark) replacing emoji placeholder
+- **Custom 404 page** — Branded error page with 100dvh layout, nav, footer, and CTA buttons; wired via `error_page 404` in `nginx.conf`
+- **Scroll-to-top button** — Floating button visible after 400px scroll; smooth scroll, hover/active/focus-visible states, mobile-responsive sizing
+- **Lazy load blur-up effect** — CSS `filter: blur` placeholder + `is-loading` / `is-loaded` classes toggled on image load events
+- **CSS/JS minification in Docker** — Multi-stage build using `clean-css-cli` and `terser` before Nginx copy
+- **Image format** — All 31 product/store/hero images converted from PNG/JPG/JPEG to WebP (`cwebp -q 82`); original files deleted; `<img>` tags updated to `.webp` directly (no `<picture>` wrapper needed)
+- **Alt text** — All image `alt` attributes rewritten with descriptive, screen-reader-friendly copy
+- `loading="eager"` and `fetchpriority="high"` added to above-the-fold hero image
+- Instagram `aria-label` updated to full descriptive label; `aria-hidden="true"` added to decorative SVGs
+- Fixed HTML syntax bug: stray `and` in `target="_blank" and rel=` attribute on Instagram link
+
+---
+
+## [0.1.0] — 2026-06-20
 
 ### Added
 - Single-page landing site with hero, menu gallery, product catalog, store locator, and footer

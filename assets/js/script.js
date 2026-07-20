@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initStoreStatus();
   initToastCustomizer();
+  initLazyImageBlur();
+  initScrollTopButton();
 });
+
 
 
 /* ---------- NAVBAR ---------- */
@@ -18,6 +21,24 @@ function initNavbar() {
   const toggle = document.getElementById('navbar-toggle');
   const links  = document.getElementById('navbar-links');
   const overlay = document.getElementById('navbar-overlay');
+
+  const closeMenu = () => {
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    links.classList.remove('open');
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  const openMenu = () => {
+    toggle.classList.add('active');
+    toggle.setAttribute('aria-expanded', 'true');
+    links.classList.add('open');
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
 
   // Scroll effect — add .scrolled class
   const onScroll = () => {
@@ -36,28 +57,28 @@ function initNavbar() {
 
   // Mobile toggle
   toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active');
-    links.classList.toggle('open');
-    overlay.classList.toggle('open');
-    document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
+    const isOpen = links.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
   });
 
   // Close mobile menu when clicking overlay
-  overlay.addEventListener('click', () => {
-    toggle.classList.remove('active');
-    links.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  overlay.addEventListener('click', closeMenu);
 
   // Close mobile menu when clicking a link
   links.querySelectorAll('.navbar__link').forEach(link => {
-    link.addEventListener('click', () => {
-      toggle.classList.remove('active');
-      links.classList.remove('open');
-      overlay.classList.remove('open');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close menu on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links.classList.contains('open')) {
+      closeMenu();
+      toggle.focus();
+    }
   });
 }
 
@@ -111,56 +132,86 @@ function initScrollReveal() {
 
 /* ---------- PRODUCT FILTER ---------- */
 function initProductFilter() {
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  const filterBtns = Array.from(document.querySelectorAll('.filter-btn'));
   const productsGrid = document.getElementById('products-grid');
   const productCards = document.querySelectorAll('.product-card');
+
+  if (!filterBtns.length) return;
 
   // Start in scroll mode for "All"
   productsGrid.classList.add('scroll-mode');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  const setFilter = (btn) => {
+    filterBtns.forEach(b => {
+      b.classList.remove('active');
+      b.setAttribute('aria-selected', 'false');
+      b.setAttribute('tabindex', '-1');
+    });
+    btn.classList.add('active');
+    btn.setAttribute('aria-selected', 'true');
+    btn.setAttribute('tabindex', '0');
 
-      const filter = btn.dataset.filter;
+    const filter = btn.dataset.filter;
 
-      if (filter === 'all') {
-        // Switch to horizontal scroll mode
-        productsGrid.classList.add('scroll-mode');
-
-        productCards.forEach(card => {
+    if (filter === 'all') {
+      productsGrid.classList.add('scroll-mode');
+      productCards.forEach(card => {
+        card.style.display = '';
+        card.classList.remove('hiding');
+        card.classList.add('showing');
+      });
+    } else {
+      productsGrid.classList.remove('scroll-mode');
+      productCards.forEach(card => {
+        const category = card.dataset.category;
+        if (category === filter) {
           card.style.display = '';
           card.classList.remove('hiding');
           card.classList.add('showing');
-        });
-      } else {
-        // Switch to normal grid mode
-        productsGrid.classList.remove('scroll-mode');
+        } else {
+          card.classList.add('hiding');
+          card.classList.remove('showing');
+          setTimeout(() => {
+            if (card.classList.contains('hiding')) {
+              card.style.display = 'none';
+            }
+          }, 350);
+        }
+      });
+    }
+  };
 
-        productCards.forEach(card => {
-          const category = card.dataset.category;
+  filterBtns.forEach((btn, index) => {
+    // Initial tabindex & aria-selected values
+    const isActive = btn.classList.contains('active');
+    btn.setAttribute('tabindex', isActive ? '0' : '-1');
+    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
 
-          if (category === filter) {
-            card.style.display = '';
-            card.classList.remove('hiding');
-            card.classList.add('showing');
-          } else {
-            card.classList.add('hiding');
-            card.classList.remove('showing');
-            // Hide after animation
-            setTimeout(() => {
-              if (card.classList.contains('hiding')) {
-                card.style.display = 'none';
-              }
-            }, 350);
-          }
-        });
+    btn.addEventListener('click', () => setFilter(btn));
+
+    // Keyboard navigation (Arrow keys, Home, End) for tablist pattern
+    btn.addEventListener('keydown', (e) => {
+      let targetIndex = null;
+      if (e.key === 'ArrowRight') {
+        targetIndex = (index + 1) % filterBtns.length;
+      } else if (e.key === 'ArrowLeft') {
+        targetIndex = (index - 1 + filterBtns.length) % filterBtns.length;
+      } else if (e.key === 'Home') {
+        targetIndex = 0;
+      } else if (e.key === 'End') {
+        targetIndex = filterBtns.length - 1;
+      }
+
+      if (targetIndex !== null) {
+        e.preventDefault();
+        const targetBtn = filterBtns[targetIndex];
+        setFilter(targetBtn);
+        targetBtn.focus();
       }
     });
   });
 }
+
 
 
 /* ---------- SMOOTH SCROLL ---------- */
@@ -253,9 +304,15 @@ function initToastCustomizer() {
 
   // Toast Taste click handlers
   toastButtons.forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+
     btn.addEventListener('click', () => {
-      toastButtons.forEach(b => b.classList.remove('active'));
+      toastButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       selectedToast = btn.dataset.value;
       updateCombo();
 
@@ -269,11 +326,63 @@ function initToastCustomizer() {
 
   // Vla Flavor click handlers
   vlaButtons.forEach(btn => {
+    btn.setAttribute('aria-pressed', btn.classList.contains('active') ? 'true' : 'false');
+
     btn.addEventListener('click', () => {
-      vlaButtons.forEach(b => b.classList.remove('active'));
+      vlaButtons.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
       btn.classList.add('active');
+      btn.setAttribute('aria-pressed', 'true');
       selectedVla = btn.dataset.value;
       updateCombo();
     });
   });
 }
+
+/* ---------- LAZY IMAGE BLUR-UP ---------- */
+function initLazyImageBlur() {
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  lazyImages.forEach(img => {
+    if (img.complete) {
+      img.classList.add('is-loaded');
+    } else {
+      img.classList.add('is-loading');
+      img.addEventListener('load', () => {
+        img.classList.remove('is-loading');
+        img.classList.add('is-loaded');
+      });
+      img.addEventListener('error', () => {
+        img.classList.remove('is-loading');
+      });
+    }
+  });
+}
+
+/* ---------- SCROLL TO TOP BUTTON ---------- */
+function initScrollTopButton() {
+  const btn = document.getElementById('scroll-top-btn');
+  if (!btn) return;
+
+  const toggleVisibility = () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  };
+
+  window.addEventListener('scroll', toggleVisibility, { passive: true });
+  toggleVisibility();
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+}
+
+
+

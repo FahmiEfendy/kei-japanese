@@ -1,3 +1,11 @@
+# Stage 1: Build & Minify Assets
+FROM node:alpine AS builder
+WORKDIR /app
+COPY . .
+RUN npx -y clean-css-cli -o assets/css/style.css assets/css/style.css \
+    && npx -y terser assets/js/script.js -o assets/js/script.js --compress --mangle
+
+# Stage 2: Production Nginx Server
 FROM nginx:stable-alpine
 
 LABEL maintainer="Fahmi Efendy"
@@ -8,9 +16,10 @@ LABEL org.opencontainers.image.source="https://github.com/FahmiEfendy/kei-japane
 RUN rm -rf /usr/share/nginx/html/* \
     && rm -f /etc/nginx/conf.d/default.conf
 
-# Copy static assets to nginx html directory
-COPY index.html /usr/share/nginx/html/
-COPY assets/ /usr/share/nginx/html/assets/
+# Copy minified static assets from builder stage
+COPY --from=builder /app/index.html /usr/share/nginx/html/
+COPY --from=builder /app/404.html /usr/share/nginx/html/
+COPY --from=builder /app/assets/ /usr/share/nginx/html/assets/
 
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 — Page Not Found | Kei Japanese Cheese Toast</title>
+  <meta name="description" content="Page not found. Return to Kei Japanese Cheese Toast homepage to explore our handcrafted bakery items." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #main-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .error-page {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-xl) var(--container-px);
+    }
+    .error-card {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+    .error-badge {
+      font-size: 5rem;
+      font-family: var(--ff-heading);
+      font-weight: 800;
+      color: var(--clr-primary-dark);
+      line-height: 1;
+      margin-bottom: var(--space-md);
+      text-shadow: 0 4px 12px rgba(255, 213, 0, 0.3);
+    }
+    .error-illustration {
+      font-size: 4rem;
+      margin-bottom: var(--space-md);
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Skip to main content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container navbar__inner">
+      <a href="index.html#hero" class="navbar__logo" id="nav-logo" aria-label="Kei Japanese Home">
+        <div class="navbar__logo-icon">K</div>
+        <div class="navbar__logo-text">Kei Japanese</div>
+      </a>
+      <div class="navbar__links" id="navbar-links" role="navigation" aria-label="Site Navigation">
+        <a href="index.html#hero" class="navbar__link">Home</a>
+        <a href="index.html#menu" class="navbar__link">Menu</a>
+        <a href="index.html#products" class="navbar__link">Products</a>
+        <a href="index.html#stores" class="navbar__link">Our Stores</a>
+      </div>
+      <button class="navbar__toggle" id="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-links">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div class="navbar__overlay" id="navbar-overlay" aria-hidden="true"></div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <section class="error-page">
+      <div class="error-card">
+        <div class="error-illustration" aria-hidden="true">🍞🧀</div>
+        <div class="error-badge">404</div>
+        <h1 class="section-title" style="margin-bottom: var(--space-sm);">Oops! Toast Not Found</h1>
+        <p class="section-subtitle" style="margin-bottom: var(--space-xl);">
+          The page you are looking for might have been moved, renamed, or over-toasted!
+        </p>
+        <div class="hero__actions" style="justify-content: center;">
+          <a href="index.html" class="btn btn--primary">
+            Back to Homepage
+          </a>
+          <a href="index.html#products" class="btn btn--outline">
+            Explore Products
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border: none; padding: var(--space-lg) 0 0;">
+        <p class="footer__copyright">&copy; 2026 Kei Japanese Cheese Toast. All rights reserved.</p>
+        <div class="footer__bottom-links">
+          <a href="index.html" class="footer__bottom-link">Home</a>
+          <a href="index.html#stores" class="footer__bottom-link">Stores</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
